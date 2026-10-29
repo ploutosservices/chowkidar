@@ -1,0 +1,11 @@
+/*
+ * Copyright 2026 Ploutos Services LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+/* Hides the identified person's username or email on every sign-in page. Keycloak's page
+   frame (keycloak.v2 template.ftl, the `username` macro) shows the identified person's name in a read-only box with a
+   restart button on every step after the first (the key page among them); hidden here, on every page.
+   Its own file name: Keycloak serves stylesheets at a fixed address with a long cache, so a rule added to an
+   existing file never reaches a browser that already holds it. A changed rule gets a new name (-v2, -v3). */
+.pf-v5-c-form__group:has(#kc-attempted-username),
+#kc-attempted-username, #reset-login { display: none !important; }

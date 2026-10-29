@@ -1,0 +1,6 @@
+chowkidar.passkey.ApprovedPasskeyAuthenticatorFactory
+chowkidar.passkey.RequestedLevelConditionFactory
+chowkidar.passkey.SwitchingBrokerRedirectorFactory
+chowkidar.passkey.AddressRouterFactory
+chowkidar.passkey.BrokerVouchedEmailConditionFactory
+chowkidar.passkey.CertificateStepUpFactory

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="t">
+  <title id="t">Chowkidar — a watchman with his lathi and shawl</title>
+  <g fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- the lathi, upright at his right, its knots and iron tip -->
+    <path d="M97 12 V122"/>
+    <path d="M93.5 40 H100.5 M93.5 66 H100.5 M93.5 92 H100.5"/>
+    <!-- the pagdi (turban): its dome, two folds and the tail -->
+    <path d="M45 44 C44 28 54 20 64 20 C74 20 84 28 83 44"/>
+    <path d="M47 38 C55 31 73 31 81 38"/>
+    <path d="M73 22 C78 17 84 18 86 23"/>
+    <!-- the face, ears, eyes and the moustache -->
+    <path d="M47 44 C46 62 54 70 64 70 C74 70 82 62 81 44"/>
+    <path d="M47 50 C43 50 43 57 47.5 58 M81 50 C85 50 85 57 80.5 58"/>
+    <path d="M57 50 V51 M71 50 V51"/>
+    <path d="M52 61 C56 57 60 58 64 60 C68 58 72 57 76 61"/>
+    <!-- the shoulders under the shawl, and the shawl's two ends crossing the chest -->
+    <path d="M30 122 C30 94 40 80 56 76 M98 100 C96 88 88 80 72 76"/>
+    <path d="M56 76 L64 90 L72 76"/>
+    <path d="M40 122 C42 104 52 94 64 90 C70 92 76 96 80 102"/>
+    <!-- his right hand closed on the lathi -->
+    <path d="M86 92 C89 84 92 78 97 76"/>
+    <circle cx="97" cy="76" r="5"/>
+  </g>
+</svg>

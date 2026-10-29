@@ -1,0 +1,38 @@
+/*
+ * Copyright 2026 Ploutos Services LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+package chowkidar.passkey;
+
+import org.keycloak.Config;
+import org.keycloak.events.EventListenerProvider;
+import org.keycloak.events.EventListenerProviderFactory;
+import org.keycloak.models.KeycloakSession;
+import org.keycloak.models.KeycloakSessionFactory;
+
+public class DisableSignoutListenerFactory implements EventListenerProviderFactory {
+
+    public static final String ID = "chowkidar-disable-signout";
+
+    @Override
+    public EventListenerProvider create(KeycloakSession session) {
+        return new DisableSignoutListener(session);
+    }
+
+    @Override
+    public void init(Config.Scope config) {
+    }
+
+    @Override
+    public void postInit(KeycloakSessionFactory factory) {
+    }
+
+    @Override
+    public void close() {
+    }
+
+    @Override
+    public String getId() {
+        return ID;
+    }
+}

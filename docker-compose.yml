@@ -1,0 +1,19 @@
+# Chowkidar on your machine: Keycloak with the extension and the theme, the generic realm `demo` imported.
+#   cp .env.example .env    # then replace every CHANGEME in it
+#   docker compose up --build
+# The admin console is http://localhost:8080/admin/ (the admin from .env); the realm is http://localhost:8080/realms/demo.
+# A development server (start-dev): its store lives in the container. Not for production.
+services:
+  keycloak:
+    build: .
+    command: ["start-dev", "--import-realm"]
+    environment:
+      KC_BOOTSTRAP_ADMIN_USERNAME: ${KC_BOOTSTRAP_ADMIN_USERNAME:?set it in .env}
+      KC_BOOTSTRAP_ADMIN_PASSWORD: ${KC_BOOTSTRAP_ADMIN_PASSWORD:?set it in .env}
+      # the realm file's ${...} placeholders, filled at import
+      HOUSE_PYTHON_CLIENT_SECRET: ${HOUSE_PYTHON_CLIENT_SECRET:?set it in .env}
+      HOUSE_NODE_CLIENT_SECRET: ${HOUSE_NODE_CLIENT_SECRET:?set it in .env}
+    volumes:
+      - ./realm:/opt/keycloak/data/import:ro
+    ports:
+      - "127.0.0.1:8080:8080"

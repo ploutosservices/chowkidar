@@ -1,0 +1,10 @@
+/*
+ * Copyright 2026 Ploutos Services LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+/* Hides the username/password form on every realm. Keycloak's own login.ftl carries such a form; it stays in
+   the page, so a script can still post to it, and is hidden from people, who see the identity-provider
+   buttons only. Only a form holding a password field is hidden, so the recovery form (a code, no
+   password) is untouched. Its own file name, so browsers holding older sheets fetch it (see chowkidar-hide-v1.css for why). */
+form#kc-form-login:has(#password),
+#kc-form-login:has(input[name="password"]) { display: none !important; }

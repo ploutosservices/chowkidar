@@ -1,0 +1,12 @@
+/*
+ * Copyright 2026 Ploutos Services LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+/* Room for the title bar above Keycloak's own login layout. The bar itself is styled only by
+   the shared titlebar.css; this file only places it. Versioned in
+   its name: Keycloak serves theme files max-age 30 days under a path that does not change. */
+.chowkidar-bar { position: relative; width: 100%; box-sizing: border-box; }
+.chowkidar-bar .estate-bar-logo img { display: block; }
+/* The rule: no tenant and environment, no way in — only "You have arrived here in error". */
+.chowkidar-error { padding: 3rem 2rem; text-align: center; }
+.chowkidar-error h1 { margin: 0; }

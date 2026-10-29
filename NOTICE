@@ -1,0 +1,15 @@
+chowkidar
+Copyright 2026 Ploutos Services LLC
+
+This product is licensed under the Apache License, Version 2.0 (see LICENSE).
+
+The login theme (themes/chowkidar/login) is a child of Keycloak's keycloak.v2 login theme and the account theme
+(themes/chowkidar/account) a child of its keycloak.v3 account theme. Each inherits the parent's other templates,
+scripts, images and PatternFly-based stylesheets, which are not copied here and stay Keycloak's. The files under
+themes/chowkidar/login whose names match Keycloak's (login-username.ftl, login-x509-info.ftl,
+webauthn-authenticate.ftl) are Keycloak 26.4.4's templates, changed as each file's opening comment says.
+Keycloak is Copyright Red Hat, Inc. and other contributors, licensed under the Apache License, Version 2.0.
+
+The SVG marks under themes/chowkidar (the Chowkidar mark, its dark variant, the wordmark and the favicon) are
+Chowkidar's own and are under the same licence. The name Chowkidar and the mark identify this project; the
+licence does not grant their use to suggest that your product is this project or endorsed by it.

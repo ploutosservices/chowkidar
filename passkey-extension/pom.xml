@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Chowkidar: Keycloak extensions for a sign-in server.
+  - records which WebAuthn credentials are backup-eligible (BE=1, synced), and, per realm, keeps those off the
+    higher level of authentication;
+  - leaves a new WebAuthn credential unusable at the higher level until an administrator approves it;
+  - ends the sessions a WebAuthn credential verified when that credential is deleted;
+  - adds email-first routing, a certificate step-up, level conditions, a switching broker redirector and
+    two more event listeners (see the README).
+  Which realm, who approves and which roots are configuration; none is in this code.
+  Built reproducibly: pinned plugins and a fixed project.build.outputTimestamp, so the same tree
+  gives the same jar bytes (the Dockerfile builds it).
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>chowkidar</groupId>
+  <artifactId>chowkidar-passkey</artifactId>
+  <version>1.0.0</version>
+  <packaging>jar</packaging>
+  <name>Chowkidar passkey policy for Keycloak</name>
+
+  <properties>
+    <keycloak.version>26.4.4</keycloak.version>
+    <maven.compiler.release>21</maven.compiler.release>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.build.outputTimestamp>2026-10-21T00:00:00Z</project.build.outputTimestamp>
+  </properties>
+
+  <dependencies>
+    <dependency><groupId>org.keycloak</groupId><artifactId>keycloak-core</artifactId><version>${keycloak.version}</version><scope>provided</scope></dependency>
+    <dependency><groupId>org.keycloak</groupId><artifactId>keycloak-server-spi</artifactId><version>${keycloak.version}</version><scope>provided</scope></dependency>
+    <dependency><groupId>org.keycloak</groupId><artifactId>keycloak-server-spi-private</artifactId><version>${keycloak.version}</version><scope>provided</scope></dependency>
+    <dependency><groupId>org.keycloak</groupId><artifactId>keycloak-services</artifactId><version>${keycloak.version}</version><scope>provided</scope></dependency>
+  </dependencies>
+
+  <build>
+    <finalName>chowkidar-passkey</finalName>
+    <pluginManagement>
+      <plugins>
+        <plugin><groupId>org.apache.maven.plugins</groupId><artifactId>maven-clean-plugin</artifactId><version>3.4.0</version></plugin>
+        <plugin><groupId>org.apache.maven.plugins</groupId><artifactId>maven-resources-plugin</artifactId><version>3.3.1</version></plugin>
+        <plugin><groupId>org.apache.maven.plugins</groupId><artifactId>maven-compiler-plugin</artifactId><version>3.13.0</version></plugin>
+        <plugin><groupId>org.apache.maven.plugins</groupId><artifactId>maven-surefire-plugin</artifactId><version>3.5.2</version></plugin>
+        <plugin><groupId>org.apache.maven.plugins</groupId><artifactId>maven-jar-plugin</artifactId><version>3.4.2</version></plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+</project>
